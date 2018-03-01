@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.bjit.controller.EmployeeController;
+import com.bjit.service.EmployeeService;
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = EmployeeController.class, secure = false)
 public class StudentControllerTest {
@@ -24,20 +25,20 @@ public class StudentControllerTest {
 	private MockMvc mockMvc;
 
 	@MockBean
-	private StudentService studentService;
-
-	Course mockCourse = new Course("Course1", "Spring", "10 Steps",
-			Arrays.asList("Learn Maven", "Import Project", "First Example",
-					"Second Example"));
+	private EmployeeService studentService;
+//
+//	Course mockCourse = new Course("Course1", "Spring", "10 Steps",
+//			Arrays.asList("Learn Maven", "Import Project", "First Example",
+//					"Second Example"));
 
 	String exampleCourseJson = "{\"name\":\"Spring\",\"description\":\"10 Steps\",\"steps\":[\"Learn Maven\",\"Import Project\",\"First Example\",\"Second Example\"]}";
 
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {
 
-		Mockito.when(
-				studentService.retrieveCourse(Mockito.anyString(),
-						Mockito.anyString())).thenReturn(mockCourse);
+//		Mockito.when(
+//				studentService.retrieveCourse(Mockito.anyString(),
+//						Mockito.anyString())).thenReturn(mockCourse);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
 				"/students/Student1/courses/Course1").accept(

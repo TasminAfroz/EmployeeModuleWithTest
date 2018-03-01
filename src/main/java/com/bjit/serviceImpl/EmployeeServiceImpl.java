@@ -58,5 +58,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findAll((org.springframework.data.domain.Pageable) limit);
     }
 
+	@Override
+	public void getAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

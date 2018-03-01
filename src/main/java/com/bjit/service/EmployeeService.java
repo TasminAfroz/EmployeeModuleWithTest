@@ -19,4 +19,6 @@ public interface EmployeeService {
     Employee findByName(String name);
 
     Page<Employee> findAll(Pageable limit);
+
+	void getAll();
 }
